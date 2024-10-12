@@ -3,7 +3,7 @@ name: Build OpenJDK17 for Android
 on:
   workflow_dispatch:
   schedule:
-  - cron: "15 5 2,9,16,23 * *"
+  - cron: "20 5 2,9,16,23 * *"
 
 jobs:
   build_android:
