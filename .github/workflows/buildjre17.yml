@@ -51,7 +51,7 @@ jobs:
       uses: actions/upload-artifact@v4.3.3
       with:
         name: "jsph-17"
-        path: android-openjdk-build/libjsph.so
+        path: android-openjdk-build/libjsph17.so
 
   pojav:
     needs: build_android
