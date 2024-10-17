@@ -82,32 +82,3 @@ jobs:
       with:
           name: jre11-pojav
           path: pojav/jre11-pojav/*
-
-  push:
-    if: github.repository_owner == 'Vera-Firefly' && github.ref_name == 'push'
-    needs: pojav
-    runs-on: ubuntu-latest
-    steps:
-    - name: Set IS_MAIN_BRANCH if on main branch
-      run: echo "JRE_OUTPUT=11" >> $GITHUB_ENV
-
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Get jre
-      uses: actions/download-artifact@v4.1.7
-      with:
-        name: jre11-pojav
-        path: JreOutPut
-
-    - name: Push New Jre on this Repository
-      run: |
-        chmod +x push.sh
-        sh push.sh
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SSH_KEY_PASSWORD: ${{ secrets.SSH_KEY_PASSWORD }}
-        USER_EMAIL: ${{ secrets.USER_EMAIL }}
-        USER_NAME: ${{ secrets.USER_NAME }}
-      shell: bash
-
