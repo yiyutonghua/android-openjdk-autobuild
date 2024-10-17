@@ -46,6 +46,12 @@ jobs:
       with:
         name: "jre21-debuginfo-${{matrix.arch}}"
         path: android-openjdk-build/dizout
+    - name: Upload jspawnhelper lib output
+      if: ${{ matrix.arch == 'aarch64'}}
+      uses: actions/upload-artifact@v4.3.3
+      with:
+        name: "jsph-21"
+        path: android-openjdk-build/libjsph21.so
 
   pojav:
     needs: build_android
