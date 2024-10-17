@@ -1,4 +1,4 @@
-name: Build OpenJDK8 for Android
+name: Push Jre and JSPH
 
 on:
   workflow_dispatch:
