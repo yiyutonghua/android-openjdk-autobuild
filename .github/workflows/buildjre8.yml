@@ -25,7 +25,7 @@ jobs:
     - name: Install build dependencies
       run: |
         sudo apt update
-        sudo apt -y install systemtap-sdt-dev gcc-multilib g++-multilib libxtst-dev libasound2-dev libelf-dev libfontconfig1-dev libx11-dev
+        sudo apt -y install systemtap-sdt-dev gcc-multilib g++-multilib libxtst-dev libasound2-dev libelf-dev libfontconfig1-dev libx11-dev libxext-dev libxrender-dev libxt-dev
         git clone --depth 1 --branch buildjre8 https://github.com/Vera-Firefly/android-openjdk-build
     - name: Build with CI build script
       run: |
